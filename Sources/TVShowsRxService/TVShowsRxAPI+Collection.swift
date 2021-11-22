@@ -17,8 +17,7 @@ public extension TVShowsRxAPI {
     func getCollection<T>(ofType: T.Type, dataRequest: DataRequest, decodingStrategy: JSONDecoder.KeyDecodingStrategy) -> Single<[T]> where T: Decodable {
       return Single.create { single in
           
-       
-        
+    
         self.adapters.forEach { $0.beforeSend(dataRequest.request) }
         
         dataRequest

@@ -4,9 +4,6 @@ import RequestAdapter
 import TVShowsResponseResults
 import TVShowsEndpoint
 
-//import RxSwift
-
-
 // MARK: - TVShowsRxAPI -
 
 public struct TVShowsRxAPI {
