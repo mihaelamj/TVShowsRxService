@@ -6,11 +6,11 @@ import TVShowsEndpoint
 
 // MARK: - TVShowsRxAPI -
 
-public struct TVShowsRxAPI {
+public struct API {
     
-    typealias ReqAdapter = RequestAdapter.Adapter
+    public typealias ReqAdapter = RequestAdapter.Adapter
     
-    typealias TVSEndpoint = TVShowsEndpoint.Endpoint
+    public typealias TVSEndpoint = TVShowsEndpoint.Endpoint
     
     // MARK: Properties -
     

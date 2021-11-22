@@ -1,5 +1,5 @@
 //
-//  TVShowsRxAPI+Collection.swift
+//  API+Collection.swift
 //  
 //
 //  Created by iMacPro on 22.11.2021..
@@ -12,11 +12,10 @@ import TVShowsEndpoint
 import TVShowsResponseResults
 import RxSwift
 
-public extension TVShowsRxAPI {
+public extension API {
     
     func getCollection<T>(ofType: T.Type, dataRequest: DataRequest, decodingStrategy: JSONDecoder.KeyDecodingStrategy) -> Single<[T]> where T: Decodable {
       return Single.create { single in
-          
     
         self.adapters.forEach { $0.beforeSend(dataRequest.request) }
         
@@ -50,4 +49,10 @@ public extension TVShowsRxAPI {
       }
     }
     
+}
+
+public extension API {
+  func fetchCollectionFrom<T>(endpoint: TVSEndpoint, type: T.Type) -> Single<[T]> where T: Decodable {
+    return getCollection(ofType: T.self, dataRequest: endpoint.request, decodingStrategy: endpoint.decodingStrategy)
+  }
 }
