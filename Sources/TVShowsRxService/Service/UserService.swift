@@ -11,19 +11,21 @@ import RxSwift
 
 public class UserService {
   
+  // MARK: - Properties -
+  
   public static let shared = UserService()
   
-//  public let api = RxService.userAPI()
+  public private(set) var api = RxService.userAPI()
   
   // MARK: - API -
   
   public func register(with email: String, _ password: String) -> Single<User> {
-    let result = RxService.userAPI().fetchOneFrom(endpoint: .register(email: email, password: password), type: User.self)
+    let result = api.fetchOneFrom(endpoint: .register(email: email, password: password), type: User.self)
     return result
   }
   
   public func login(with email: String, _ password: String) -> Single<User> {
-    let result = RxService.userAPI().fetchOneFrom(endpoint: .login(email: email, password: password), type: User.self)
+    let result = api.fetchOneFrom(endpoint: .login(email: email, password: password), type: User.self)
     return result
   }
   
