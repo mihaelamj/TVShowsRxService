@@ -12,3 +12,19 @@ public struct TVShowsRxService {
     public init() {
     }
 }
+
+
+// MARK: - RxAPI -
+
+public struct RxAPI {
+  
+  // MARK: Properties -
+  
+    private var adapters: [RequestAdapter.RequestAdapter]
+  
+  // MARK: Init -
+  
+    public init(adapters: [RequestAdapter.RequestAdapter] = []) {
+    self.adapters = adapters
+  }
+}
