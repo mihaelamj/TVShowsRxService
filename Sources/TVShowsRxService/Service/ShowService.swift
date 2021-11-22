@@ -43,16 +43,16 @@ public class ShowService {
   // TODO: createReview(showId) -
   
   public func createReview(showId: Int, rating: Int, comment: String) -> Single<Review> {
-    let result = RxService.showsAPI().fetchOneFrom(endpoint: .createReview(showId: showId, rating: rating, comment: String), type: Review.self)
+    let result = RxService.showsAPI().fetchOneFrom(endpoint: .createReview(showId: showId, rating: rating, comment: comment), type: Review.self)
     return result
   }
   
   // TODO: deleteReview(reviewId) -
   
-  public func deleteReview(reviewId: Int) -> Single<Void> {
-    let result = RxService.showsAPI().fetchOneFrom(endpoint: .deleteReview(reviewId: reviewId), type: Void.self)
-    return result
-  }
+//  public func deleteReview(reviewId: Int) -> Single<Void> {
+//    let result = RxService.showsAPI().fetchOneFrom(endpoint: .deleteReview(reviewId: reviewId), type: Void.self)
+//    return result
+//  }
   
   // TODO: updateReview(reviewId) -
   
