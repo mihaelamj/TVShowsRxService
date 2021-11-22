@@ -1,5 +1,10 @@
+//
+//  API.swift
+//
+//
+//  Created by iMacPro on 22.11.2021..
+//
 
-//import Alamofire
 import RequestAdapter
 import TVShowsResponseResults
 import TVShowsEndpoint

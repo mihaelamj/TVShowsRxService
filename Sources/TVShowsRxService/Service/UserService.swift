@@ -6,33 +6,34 @@
 //
 
 import Foundation
-import RequestAdapter
 import TVShowsEndpoint
 import RxSwift
 
-class UserService {
+public class UserService {
   
-  static let shared = UserService()
+  public static let shared = UserService()
+  
+//  public let api = RxService.userAPI()
   
   // MARK: - API -
   
-  func register(with email: String, _ password: String) -> Single<User> {
+  public func register(with email: String, _ password: String) -> Single<User> {
     let result = RxService.userAPI().fetchOneFrom(endpoint: .register(email: email, password: password), type: User.self)
     return result
   }
   
-  func login(with email: String, _ password: String) -> Single<User> {
+  public func login(with email: String, _ password: String) -> Single<User> {
     let result = RxService.userAPI().fetchOneFrom(endpoint: .login(email: email, password: password), type: User.self)
     return result
   }
   
   // MARK: - App -
   
-  func saveRememberMe() {
+  public func saveRememberMe() {
     UserDefaults.standard.set(true, forKey: Constants.UserData.rememberMe)
   }
   
-  func deleteRememberMe() {
+  public func deleteRememberMe() {
     TVShowsEndpoint.UserAuthData.deleteFromRepository()
   }
   

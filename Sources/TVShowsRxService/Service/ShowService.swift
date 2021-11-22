@@ -5,14 +5,27 @@
 //  Created by iMacPro on 22.11.2021..
 //
 
-import Foundation
+import TVShowsEndpoint
+import RxSwift
 
-class ShowService {
+public class ShowService {
   
-  static let shared = ShowService()
+  public static let shared = ShowService()
   
   // TODO: allShows -
+  
+  public func allShows() -> Single<[Show]> {
+    let result = RxService.showsAPI().fetchCollectionFrom(endpoint: .shows, type: Show.self)
+    return result
+  }
+  
   // TODO: oneShow(showId) -
+  
+  public func show(id: Int) -> Single<[Show]> {
+    let result = RxService.showsAPI().fetchOneFrom(endpoint: .show(id: id), type: Show.self)
+    return result
+  }
+  
   // TODO: topRatedShows -
   
   // TODO: allReviews(showId) -
