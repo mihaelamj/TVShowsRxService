@@ -35,7 +35,7 @@ public extension API {
           
           do {
             let decoder = TVSEndpoint.makeDecoder(decodingStrategy: decodingStrategy)
-  
+            
             if let item = try decoder.decode(TVShowsResponseResults.Item<T>.self, from: data).item {
               self.adapters.forEach { $0.onSuccess(request: dataRequest.request) }
               single(.success(item))
