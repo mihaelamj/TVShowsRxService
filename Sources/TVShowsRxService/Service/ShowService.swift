@@ -28,6 +28,11 @@ public class ShowService {
   
   // TODO: topRatedShows -
   
+  public func topRatedShows() -> Single<[Show]> {
+    let result = RxService.showsAPI().fetchCollectionFrom(endpoint: .topRated, type: Show.self)
+    return result
+  }
+  
   // TODO: allReviews(showId) -
   // TODO: createReview(showId) -
   // TODO: deleteReview(reviewId) -
