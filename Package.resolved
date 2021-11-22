@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": "master",
+          "revision": "65b77694905b0dea7e419b2f74b1e5dc037094b5",
+          "version": null
+        }
+      },
+      {
+        "package": "RequestAdapter",
+        "repositoryURL": "https://github.com/mihaelamj/RequestAdapter.git",
+        "state": {
+          "branch": null,
+          "revision": "17aed36282663055513cbd9255101eb53f5e23f2",
+          "version": "0.1.0"
+        }
+      },
+      {
+        "package": "TVShowsEndpoint",
+        "repositoryURL": "https://github.com/mihaelamj/TVShowsEndpoint.git",
+        "state": {
+          "branch": "main",
+          "revision": "c7ab2fab72108beadc0304bf1e00bfa4d437ef56",
+          "version": null
+        }
+      },
+      {
+        "package": "TVShowsResponseResults",
+        "repositoryURL": "https://github.com/mihaelamj/TVShowsResponseResults.git",
+        "state": {
+          "branch": "main",
+          "revision": "32b87c07b367f27ff058ce3d3f657faece453b1e",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

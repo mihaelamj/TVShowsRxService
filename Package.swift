@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "TVShowsRxService",
+    platforms: [.iOS(.v15), .macOS(.v12)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -12,8 +13,9 @@ let package = Package(
             targets: ["TVShowsRxService"]),
     ],
     dependencies: [
-        //https://github.com/mihaelamj/TVShowsResponseResults
-        .package(url: "https://github.com/mihaelamj/TVShowsResponseResults.git", from: "0.1.0")
+        .package(url: "https://github.com/mihaelamj/RequestAdapter.git", from: "0.1.0"),
+        .package(url: "https://github.com/mihaelamj/TVShowsEndpoint.git", branch: "main"),
+        .package(url: "https://github.com/mihaelamj/TVShowsResponseResults.git", branch: "main"),
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
