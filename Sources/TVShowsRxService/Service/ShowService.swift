@@ -21,7 +21,7 @@ public class ShowService {
   
   // TODO: oneShow(showId) -
   
-  public func show(id: Int) -> Single<[Show]> {
+  public func show(id: Int) -> Single<Show> {
     let result = RxService.showsAPI().fetchOneFrom(endpoint: .show(id: id), type: Show.self)
     return result
   }
@@ -34,8 +34,31 @@ public class ShowService {
   }
   
   // TODO: allReviews(showId) -
+  
+  public func allReviews(showId: Int) -> Single<[Review]> {
+    let result = RxService.showsAPI().fetchCollectionFrom(endpoint: .reviews(showId: showId), type: Review.self)
+    return result
+  }
+  
   // TODO: createReview(showId) -
+  
+  public func createReview(showId: Int, rating: Int, comment: String) -> Single<Review> {
+    let result = RxService.showsAPI().fetchOneFrom(endpoint: .createReview(showId: showId, rating: rating, comment: String), type: Review.self)
+    return result
+  }
+  
   // TODO: deleteReview(reviewId) -
+  
+  public func deleteReview(reviewId: Int) -> Single<Void> {
+    let result = RxService.showsAPI().fetchOneFrom(endpoint: .deleteReview(reviewId: reviewId), type: Void.self)
+    return result
+  }
+  
   // TODO: updateReview(reviewId) -
+  
+  public func updateReview(reviewId: Int, rating: Int, comment: String) -> Single<Review> {
+    let result = RxService.showsAPI().fetchOneFrom(endpoint: .updateReview(reviewId: reviewId, rating: rating, comment: comment), type: Review.self)
+    return result
+  }
   
 }
