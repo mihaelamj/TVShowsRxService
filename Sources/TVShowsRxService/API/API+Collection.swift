@@ -13,7 +13,6 @@ import TVShowsResponseResults
 import RxSwift
 
 public extension API {
-    
     func getCollection<T>(ofType: T.Type, dataRequest: DataRequest, decodingStrategy: JSONDecoder.KeyDecodingStrategy) -> Single<[T]> where T: Decodable {
       return Single.create { single in
     
@@ -48,7 +47,6 @@ public extension API {
         return Disposables.create { dataRequest.cancel() }
       }
     }
-    
 }
 
 public extension API {
