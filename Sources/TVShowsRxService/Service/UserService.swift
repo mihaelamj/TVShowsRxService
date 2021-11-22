@@ -15,7 +15,7 @@ public class UserService {
   
   public static let shared = UserService()
   
-  public private(set) var api = RxService.userAPI()
+  public private(set) var api = Service.userAPI()
   
   // MARK: - API -
   

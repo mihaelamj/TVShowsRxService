@@ -8,7 +8,7 @@
 import Foundation
 import RequestAdapter
 
-public struct RxService {
+public struct Service {
   
   public static func showsAPI() -> API {
     return API(adapters: [LogAdapter(logLevel: .debug)])

@@ -14,7 +14,7 @@ public class ShowService {
   
   public static let shared = ShowService()
   
-  public private(set) var api = RxService.showsAPI()
+  public private(set) var api = Service.showsAPI()
   
   // TODO: allShows -
   
