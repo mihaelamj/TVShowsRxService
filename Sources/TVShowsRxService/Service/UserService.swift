@@ -29,6 +29,11 @@ public class UserService {
     return result
   }
   
+  public func updateUser(with email: String, imageURLString: String) -> Single<User>  {
+    let result = api.fetchOneFrom(endpoint: .updateUserImage(email: email, imageURLString: imageURLString), type: User.self)
+    return result
+  }
+  
   // MARK: - App -
   
   public func saveRememberMe() {
