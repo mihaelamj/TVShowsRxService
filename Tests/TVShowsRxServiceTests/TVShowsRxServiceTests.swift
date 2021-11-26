@@ -27,6 +27,12 @@ final class TVShowsRxServiceTests: XCTestCase {
     let user = userObject as? User
     XCTAssertNotNil(user)
     
+    // TODO: Catch errors -
+    
+    // TODO: Save responses as `JSON` -
+    
+    // TODO: Test Interceptor -
+    
 //    result.do { user in
 //      debugPrint("User: \(user)")
 //    } onError: { error in
