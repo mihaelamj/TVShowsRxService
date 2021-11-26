@@ -2,6 +2,7 @@ import XCTest
 @testable import TVShowsRxService
 import RxSwift
 import RxTest
+import RxBlocking
 
 final class TVShowsRxServiceTests: XCTestCase {
   
@@ -17,15 +18,22 @@ final class TVShowsRxServiceTests: XCTestCase {
   
   
   
-  func testUserRegister() {
-    let result: Single<User> = UserService.shared.register(with: TVShowsRxServiceTests.testEmail, TVShowsRxServiceTests.testPassword)
-    result.do { user in
-      debugPrint("User: \(user)")
-    } onError: { error in
-      debugPrint("Error: \(error)")
-    } onSubscribe: {
-      debugPrint("Subscribed")
-    }
+  func testUserRegister() throws {
+    let result: Single<User> = UserService.shared.register(with: "mihaelamj@gmail.com", "123456")
+    let blockingResult = try result.toBlocking().toArray()
+    
+    let userObject = blockingResult.first
+    XCTAssertNotNil(userObject)
+    let user = userObject as? User
+    XCTAssertNotNil(user)
+    
+//    result.do { user in
+//      debugPrint("User: \(user)")
+//    } onError: { error in
+//      debugPrint("Error: \(error)")
+//    } onSubscribe: {
+//      debugPrint("Subscribed")
+//    }
     
     
   }
