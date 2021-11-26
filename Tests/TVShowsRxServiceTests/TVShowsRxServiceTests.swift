@@ -1,6 +1,7 @@
 import XCTest
 @testable import TVShowsRxService
 import RxSwift
+import RxTest
 
 final class TVShowsRxServiceTests: XCTestCase {
   
@@ -29,3 +30,6 @@ final class TVShowsRxServiceTests: XCTestCase {
     
   }
 }
+
+
+//dependency 'RxTest' in target 'TVShowsRxServiceTests' requires explicit declaration; reference the package in the target dependency with '.product(name: "RxTest", package: "RxSwift")'
