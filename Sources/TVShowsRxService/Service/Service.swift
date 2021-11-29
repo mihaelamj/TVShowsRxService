@@ -11,7 +11,7 @@ import RequestAdapter
 public struct Service {
   
   public static func showsAPI() -> API {
-    return API(adapters: [LogAdapter(logLevel: .debug)])
+    return API(adapters: [LogAdapter(logLevel: .debug), UserAuthAdapter()])
   }
   
   public static func userAPI() -> API {

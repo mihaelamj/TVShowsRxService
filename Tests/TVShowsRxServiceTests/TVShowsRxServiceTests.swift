@@ -3,6 +3,7 @@ import XCTest
 import RxSwift
 import RxTest
 import RxBlocking
+import TVShowsEndpoint
 
 final class TVShowsRxServiceTests: XCTestCase {
   
@@ -35,7 +36,16 @@ final class TVShowsRxServiceTests: XCTestCase {
     let userObject = blockingResult.first
     XCTAssertNotNil(userObject)
     XCTAssertEqual(userObject?.email, TVShowsRxServiceTests.email)
-    debugPrint("Registeres user: \(TVShowsRxServiceTests.email)")
+    debugPrint("Registered user: \(TVShowsRxServiceTests.email)")
+    
+    // test auth adapter
+    let userAuthData = TVShowsEndpoint.UserAuthData.fromRepository()
+    XCTAssertNotNil(userAuthData)
+    if let data = userAuthData {
+//      XCTAssertEqual(data.uid, TVShowsRxServiceTests.email)
+    }
+    
+    debugPrint("userAuthData: \(userAuthData!)")
   }
   
   func testUserLogin() throws {
