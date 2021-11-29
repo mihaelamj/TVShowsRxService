@@ -41,11 +41,12 @@ final class TVShowsRxServiceTests: XCTestCase {
     // test auth adapter
     let userAuthData = TVShowsEndpoint.UserAuthData.fromRepository()
     XCTAssertNotNil(userAuthData)
+    XCTAssertEqual(userAuthData?.userAuthUID, TVShowsRxServiceTests.email)
     if let data = userAuthData {
-//      XCTAssertEqual(data.uid, TVShowsRxServiceTests.email)
+      debugPrint("userAuthData: \(data)")
     }
     
-    debugPrint("userAuthData: \(userAuthData!)")
+    
   }
   
   func testUserLogin() throws {
