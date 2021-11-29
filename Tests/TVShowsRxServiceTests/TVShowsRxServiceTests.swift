@@ -9,6 +9,8 @@ final class TVShowsRxServiceTests: XCTestCase {
   static let testEmail = "test@test.com"
   static let testPassword = "testtest"
   
+  static var email = ""
+  
   func testExample() throws {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct
@@ -16,30 +18,29 @@ final class TVShowsRxServiceTests: XCTestCase {
     //        XCTAssertEqual(TVShowsRxService().text, "Hello, World!")
   }
   
+  override func setUp() {
+    TVShowsRxServiceTests.email = "mihaelamj+\(Int.random(in: 0..<1000))@gmail.com"
+  }
   
+  // TODO: Catch errors -
   
-  func testUserRegister() throws {
-    let result: Single<User> = UserService.shared.register(with: "mihaelamj@gmail.com", "123456")
+  // TODO: Save responses as `JSON` -
+  
+  // TODO: Test Interceptor -
+  
+  func testRandomUserRegister() throws {
+    let result: Single<User> = UserService.shared.register(with: TVShowsRxServiceTests.email, TVShowsRxServiceTests.testPassword)
     let blockingResult = try result.toBlocking().toArray()
     
     let userObject = blockingResult.first
     XCTAssertNotNil(userObject)
-    let user = userObject as? User
-    XCTAssertNotNil(user)
-    
-    // TODO: Catch errors -
-    
-    // TODO: Save responses as `JSON` -
-    
-    // TODO: Test Interceptor -
-    
-//    result.do { user in
-//      debugPrint("User: \(user)")
-//    } onError: { error in
-//      debugPrint("Error: \(error)")
-//    } onSubscribe: {
-//      debugPrint("Subscribed")
-//    }
+    XCTAssertEqual(userObject?.email, TVShowsRxServiceTests.email)
+    debugPrint("Registeres user: \(TVShowsRxServiceTests.email)")
+  }
+  
+  func testUserLogin() throws {
+    let result: Single<User> = UserService.shared.login(with: TVShowsRxServiceTests.email, TVShowsRxServiceTests.testPassword)
+    let blockingResult = try result.toBlocking().toArray()
     
     
   }

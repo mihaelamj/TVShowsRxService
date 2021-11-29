@@ -40,7 +40,7 @@ public extension API {
               self.adapters.forEach { $0.onSuccess(request: dataRequest.request) }
               single(.success(item))
             } else {
-              let error = AFError.explicitlyCancelled // INFO: MAybe change the error type to something decoding related -
+              let error = AFError.explicitlyCancelled // INFO: Maybe change the error type to something decoding related -
               self.adapters.forEach { $0.onError(request: dataRequest.request, error: error) }
               single(.failure(error))
             }
