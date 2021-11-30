@@ -73,7 +73,7 @@ final class ShowServiceTests: XCTestCase {
     let result: Single<Review> = ShowService.shared.updateReview(reviewId: ShowServiceTests.reviewID, rating: rating, comment: comment)
     let blockingResult = try result.toBlocking().toArray()
     
-    //invalidURL(url: \"https://tv-shows.infinum.academy/reviews(reviewId: 9729, rating: 5, comment: \\\"Amazing, awesome show\\\")\")"
+    //"https://tv-shows.infinum.academy/reviews(reviewId: 9729, rating: 5, comment: \\\"Amazing, awesome show\\\")\")"
     
     //caught error: "invalidURL(url: "https://tv-shows.infinum.academy/reviews(reviewId: 9729, rating: 5, comment: \"Amazing, awesome show\")")"
     
