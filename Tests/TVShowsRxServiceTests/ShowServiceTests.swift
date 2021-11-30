@@ -4,6 +4,7 @@ import RxSwift
 import RxTest
 import RxBlocking
 import TVShowsEndpoint
+import Alamofire
 
 final class ShowServiceTests: XCTestCase {
   
@@ -74,18 +75,32 @@ final class ShowServiceTests: XCTestCase {
     let rating = 5
     let comment = "Amazing, awesome show"
     
-    let result: Single<Review> = ShowService.shared.updateReview(reviewId: Constants.TestUser.reviewID, rating: rating, comment: comment)
+    
+    let result: Single<Review> = ShowService.shared.updateReview(reviewId: 9732, rating: rating, comment: comment)
     let blockingResult = try result.toBlocking().toArray()
-    
-    //"https://tv-shows.infinum.academy/reviews(reviewId: 9729, rating: 5, comment: \\\"Amazing, awesome show\\\")\")"
-    
-    //caught error: "invalidURL(url: "https://tv-shows.infinum.academy/reviews(reviewId: 9729, rating: 5, comment: \"Amazing, awesome show\")")"
     
     let review = blockingResult.first
     XCTAssertNotNil(review)
     
     XCTAssertEqual(rating, review?.rating)
     XCTAssertEqual(comment, review?.comment)
+  }
+  
+  func testDeleteReview() throws {
+    let result: Single<Errors> = ShowService.shared.deleteReview(reviewId: 9734)
+    var errors: Errors? = nil
+    
+    do {
+      let blockingResult = try result.toBlocking().toArray()
+      errors = blockingResult.first
+    } catch AFError.explicitlyCancelled {
+      XCTAssertTrue(true)
+      return
+    } catch {
+      debugPrint("Error: \(error)")
+    }
+    
+    XCTAssertNil(errors)
   }
   
 }

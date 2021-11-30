@@ -6,9 +6,9 @@
 //
 
 public struct User: Codable {
-    public let email: String
-    public let id: String
-    public let imageUrl: String?
+  public let email: String
+  public let id: String
+  public let imageUrl: String?
 }
 
 // MARK: - Extensions -

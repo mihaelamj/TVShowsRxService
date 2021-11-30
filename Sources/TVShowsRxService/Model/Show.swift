@@ -6,12 +6,12 @@
 //
 
 public struct Show: Codable {
-    public let id: String
-    public let averageRating: Double?
-    public let desc: String?
-    public var imageUrl: String?
-    public let noOfReviews: Int?
-    public var title: String
+  public let id: String
+  public let averageRating: Double?
+  public let desc: String?
+  public var imageUrl: String?
+  public let noOfReviews: Int?
+  public var title: String
 }
 
 // MARK: - Extensions -
