@@ -14,13 +14,9 @@ final class ShowServiceTests: XCTestCase {
     let shows = blockingResult.first
     XCTAssertNotNil(shows)
     
-    let typedShows = shows as? [Show]
-    XCTAssertNotNil(typedShows)
-//    XCTAssertTrue(shows is [Show].self)
-    
-    // test `UserAuthInterceptor`
-    
-    
+    if let tyShows = shows {
+      XCTAssertTrue(!tyShows.isEmpty)
+    }
   }
   
 }
