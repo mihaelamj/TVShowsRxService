@@ -13,7 +13,6 @@ public class ShowService {
   // MARK: - Properties -
   
   public static let shared = ShowService()
-  
   public private(set) var api = Service.showsAPI()
   
   // INFO: allShows -
@@ -51,7 +50,7 @@ public class ShowService {
     return result
   }
   
-  // TODO: deleteReview(reviewId) -
+  // INFO: deleteReview(reviewId) -
   
   public func deleteReview(reviewId: Int) -> Single<Errors> {
     let result = api.fetchOneFrom(endpoint: .deleteReview(reviewId: reviewId), type: Errors.self)

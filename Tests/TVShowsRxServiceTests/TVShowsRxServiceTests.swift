@@ -7,10 +7,4 @@ import TVShowsEndpoint
 
 final class TVShowsRxServiceTests: XCTestCase {
   
-  // TODO: Catch errors -
-  
-  // TODO: Save responses as `JSON` -
-  
-  // TODO: Test Interceptor -
-  
 }
