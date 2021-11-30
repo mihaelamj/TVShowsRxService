@@ -12,6 +12,7 @@ public struct Constants {
   struct TestUser {
     public static let email = "team.ios@infinum.com"
     public static let password = "infinum1"
+    public static let showID = 107
   }
   
   public struct UserData {
