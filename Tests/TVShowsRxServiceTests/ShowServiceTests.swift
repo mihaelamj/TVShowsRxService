@@ -61,16 +61,20 @@ final class ShowServiceTests: XCTestCase {
     let review = blockingResult.first
     XCTAssertNotNil(review)
     
-    ShowServiceTests.reviewID = Int(review!.id) ?? 0
+    
+    debugPrint("Created review: \(review!)")
     
     XCTAssertEqual(rating, review?.rating)
+    
+    ShowServiceTests.reviewID = Int(review!.id) ?? 0
+   
   }
   
   func testUpdateReviewForOneShow() throws {
     let rating = 5
     let comment = "Amazing, awesome show"
     
-    let result: Single<Review> = ShowService.shared.updateReview(reviewId: ShowServiceTests.reviewID, rating: rating, comment: comment)
+    let result: Single<Review> = ShowService.shared.updateReview(reviewId: Constants.TestUser.reviewID, rating: rating, comment: comment)
     let blockingResult = try result.toBlocking().toArray()
     
     //"https://tv-shows.infinum.academy/reviews(reviewId: 9729, rating: 5, comment: \\\"Amazing, awesome show\\\")\")"

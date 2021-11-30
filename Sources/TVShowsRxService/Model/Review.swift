@@ -12,3 +12,11 @@ public struct Review: Codable {
     public let showId: Int
     public let user: User
 }
+
+// MARK: - Extensions -
+
+extension Review: CustomStringConvertible {
+  public var description: String {
+    return "💎: [\(id), \(showId)]: (\(rating)), \(comment)"
+  }
+}
