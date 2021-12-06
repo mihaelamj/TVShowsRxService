@@ -15,11 +15,12 @@ let package = Package(
     .package(url: "https://github.com/mihaelamj/RequestAdapter.git", from: "0.2.0"),
     .package(url: "https://github.com/mihaelamj/TVShowsEndpoint.git", branch: "main"),
     .package(url: "https://github.com/mihaelamj/TVShowsResponseResults.git", branch: "main"),
+    .package(url: "https://github.com/mihaelamj/TVShowsModels.git", branch: "main"),
     .package(url: "https://github.com/ReactiveX/RxSwift.git", branch: "main")
   ],
   targets: [
     .target(
-      name: "TVShowsRxService", dependencies: ["Alamofire", "RequestAdapter", "TVShowsEndpoint", "TVShowsResponseResults", "RxSwift"]),
+      name: "TVShowsRxService", dependencies: ["Alamofire", "RequestAdapter", "TVShowsEndpoint", "TVShowsResponseResults", "TVShowsModels", "RxSwift"]),
     .testTarget(
       name: "TVShowsRxServiceTests",
       dependencies: [

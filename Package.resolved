@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "TVShowsModels",
+        "repositoryURL": "https://github.com/mihaelamj/TVShowsModels.git",
+        "state": {
+          "branch": "main",
+          "revision": "7810cd1ba25f69a228dd9076ddf7b22566cdeab8",
+          "version": null
+        }
+      },
+      {
         "package": "TVShowsResponseResults",
         "repositoryURL": "https://github.com/mihaelamj/TVShowsResponseResults.git",
         "state": {
