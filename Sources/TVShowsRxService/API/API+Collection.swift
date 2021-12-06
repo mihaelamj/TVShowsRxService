@@ -32,7 +32,7 @@ public extension API {
           }
           
           do {
-            let decoder = TVSEndpoint.makeDecoder(decodingStrategy: decodingStrategy)
+            let decoder = TVShowsEndpoint.Endpoint.makeDecoder(decodingStrategy: decodingStrategy)
             let result = try decoder.decode(TVShowsResponseResults.Collection<T>.self, from: data)
 //            let items: [T] = result.results ?? [] // INFO: Maybe return an error here, if empty -
             let items: [T] = result.results ?? [] // INFO: Maybe return an error here, if empty -
@@ -51,7 +51,7 @@ public extension API {
 }
 
 public extension API {
-  func fetchCollectionFrom<T>(endpoint: TVSEndpoint, type: T.Type) -> Single<[T]> where T: Decodable {
+  func fetchCollectionFrom<T>(endpoint: TVShowsEndpoint.Endpoint, type: T.Type) -> Single<[T]> where T: Decodable {
     return getCollection(ofType: T.self, dataRequest: endpoint.request, decodingStrategy: endpoint.decodingStrategy)
   }
 }

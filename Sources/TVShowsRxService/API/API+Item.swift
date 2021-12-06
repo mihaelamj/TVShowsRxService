@@ -34,7 +34,7 @@ public extension API {
           }
           
           do {
-            let decoder = TVSEndpoint.makeDecoder(decodingStrategy: decodingStrategy)
+            let decoder = TVShowsEndpoint.Endpoint.makeDecoder(decodingStrategy: decodingStrategy)
             
             if let item = try decoder.decode(TVShowsResponseResults.Item<T>.self, from: data).item {
               self.adapters.forEach { $0.onSuccess(request: dataRequest.request) }
@@ -57,7 +57,7 @@ public extension API {
 }
 
 public extension API {
-  func fetchOneFrom<T>(endpoint: TVSEndpoint, type: T.Type) -> Single<T> where T: Decodable {
+  func fetchOneFrom<T>(endpoint: TVShowsEndpoint.Endpoint, type: T.Type) -> Single<T> where T: Decodable {
     return getItem(dataRequest: endpoint.request, decodingStrategy: endpoint.decodingStrategy)
   }
 }

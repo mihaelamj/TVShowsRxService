@@ -9,17 +9,13 @@ import RequestAdapter
 import TVShowsResponseResults
 import TVShowsEndpoint
 
-// MARK: - TVShowsRxAPI -
+// MARK: - API -
 
 public struct API {
     
-    public typealias ReqAdapter = RequestAdapter.Adapter
-    
-    public typealias TVSEndpoint = TVShowsEndpoint.Endpoint
-    
     // MARK: Properties -
-    
-    var adapters: [ReqAdapter]
+  
+    var adapters: [RequestAdapter.Adapter]
     
     // MARK: Init -
     
