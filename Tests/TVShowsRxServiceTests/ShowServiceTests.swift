@@ -3,6 +3,7 @@ import XCTest
 import RxSwift
 import RxTest
 import RxBlocking
+import TVShowsModels
 import TVShowsEndpoint
 import Alamofire
 

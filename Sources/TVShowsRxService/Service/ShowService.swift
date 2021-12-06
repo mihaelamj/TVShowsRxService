@@ -6,6 +6,7 @@
 //
 
 import TVShowsEndpoint
+import TVShowsModels
 import RxSwift
 
 public class ShowService {
