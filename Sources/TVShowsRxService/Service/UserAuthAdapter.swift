@@ -9,7 +9,7 @@ import Foundation
 import RequestAdapter
 import TVShowsEndpoint
 
-struct UserAuthAdapter : API.ReqAdapter {
+public struct UserAuthAdapter : API.ReqAdapter {
   func onResponse(response: URLResponse?, data: Data?) {
     if let urlResponse = response as? HTTPURLResponse {
       TVShowsEndpoint.UserAuthData.saveToRepositoryFrom(urlResponse: urlResponse)
